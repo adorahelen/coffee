@@ -5,6 +5,10 @@ import edu.portfolio.coffee.model.Product;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import java.nio.ByteBuffer;
 import java.sql.Timestamp;
@@ -19,9 +23,7 @@ public class ProductRepositoryImpl implements ProductRepository {
     // NamedParameterJdbcTemplate을 사용하여 쿼리에서 명명된 매개변수를 지원하는 JDBC 템플릿을 초기화
     private final NamedParameterJdbcTemplate jdbcTemplate;
 
-    public ProductRepositoryImpl(NamedParameterJdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
-    }
+    public ProductRepositoryImpl(NamedParameterJdbcTemplate jdbcTemplate) {this.jdbcTemplate = jdbcTemplate;}
 
     // 모든 제품을 조회하여 List<Product>로 반환
     @Override
@@ -41,30 +43,57 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     @Override
     public Product update(Product product) {
-        return null;
+        var update = jdbcTemplate.update(
+                "UPDATE products SET product_name = :productName, category = :category, price = :price, description = :description, created_at = :createdAt, updated_at = :updatedAt" +
+                        " WHERE product_id = UUID_TO_BIN(:productId)",
+                toParamMap(product)
+        );
+        if (update != 1) {
+            throw new RuntimeException("Nothing was updated");
+        }
+        return product;
+    }
+
+
+    @Override
+    public Optional<Product> findById(UUID productId) {
+        try {
+            return Optional.ofNullable(
+                    jdbcTemplate.queryForObject("SELECT * FROM products WHERE product_id = UUID_TO_BIN(:productId)",
+                            Collections.singletonMap("productId", productId.toString().getBytes()), productRowMapper)
+            );
+        } catch (EmptyResultDataAccessException e) {
+            return Optional.empty();
+        }
     }
 
     @Override
-    public Optional<Product> findById(UUID ProductId) {
-        return Optional.empty();
+    public Optional<Product> findByName(String productName) {
+        try {
+            return Optional.ofNullable(
+                    jdbcTemplate.queryForObject("SELECT * FROM products WHERE product_name = :productName",
+                            Collections.singletonMap("productName", productName), productRowMapper)
+            );
+        } catch (EmptyResultDataAccessException e) {
+            return Optional.empty();
+        }
     }
 
-    @Override
-    public Optional<Product> findByName(String ProductName) {
-        return Optional.empty();
-    }
 
     @Override
     public List<Product> findByCategory(Category category) {
-        return List.of();
+        return jdbcTemplate.query(
+                "SELECT * FROM products WHERE category = :category",
+                Collections.singletonMap("category", category.toString()),
+                productRowMapper
+        );
     }
 
     @Override
     public void deleteAll() {
-
+        jdbcTemplate.update("DELETE FROM products", Collections.emptyMap());
     }
 
-    // 제품 결과를 매핑하여 Product 객체로 변환하는 RowMapper
     private static final RowMapper<Product> productRowMapper = (resultSet, i) -> {
         var productId = toUUID(resultSet.getBytes("product_id"));
         var productName = resultSet.getString("product_name");
@@ -76,7 +105,6 @@ public class ProductRepositoryImpl implements ProductRepository {
         return new Product(productId, productName, category, price, description, createdAt, updatedAt);
     };
 
-    // Product 객체의 필드를 SQL 쿼리의 매개변수에 매핑하기 위해 Map으로 변환
     private Map<String, Object> toParamMap(Product product) {
         var paramMap = new HashMap<String, Object>();
         paramMap.put("productId", product.getProductId().toString().getBytes());

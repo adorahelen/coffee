@@ -62,8 +62,13 @@ class ProductJdbcRepositoryTest {
         assertThat(product.isEmpty(), is(false));
     }
 
-//    @Override
-//    public Optional<Product> findById(UUID productId) {}
+    @Test
+    @Order(3)
+    @DisplayName("상품을아이디로 조회할 수 있다.")
+    void testFindById() {
+        var product = repository.findById(newProduct.getProductId());
+        assertThat(product.isEmpty(), is(false));
+    }
 
 
     @Test
