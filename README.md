@@ -9,6 +9,9 @@
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/349d2250-354e-428a-8e72-697661d9c143">
 
 - 테스트 코드를 한번에 돌리면, 이렇게 통과 되는데, 개별적으로 돌리면 아이디 조회 + 업데이트에서 에러가 나는 이유는 ????
+<img width="796" alt="image" src="https://github.com/user-attachments/assets/d64eeff1-28d3-43b7-b63a-bffc0e9b6b28">
+
+  
 
 - 테스트 코드에서 객체를 공유하지 않는 경우 (분리된 경우)
 
