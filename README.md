@@ -10,3 +10,11 @@
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/82b74943-9e3c-4e97-bc00-69b6277a873b">
 
 - 들어가서 검색하면 다 나온다. (이메일, 등 ) 
+
+## 데이터베이스
+- 디비를 의존성에 넣었으면, 디비를 잡지 않으면 에러가 뜬다.
+- 테스트 코드에서 내장형 임베디드 MySQL 사용 -> 에러 
+- 따라서 아래와 같이 디비 생성 
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/83554af2-6b0f-472c-a0ed-1db9cda589dd">
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/a160814e-bd5a-4e9b-a3b1-9cf841c74e4a">
+
