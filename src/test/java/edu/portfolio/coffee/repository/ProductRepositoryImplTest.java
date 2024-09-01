@@ -1,8 +1,5 @@
 package edu.portfolio.coffee.repository;
 
-import com.wix.mysql.EmbeddedMysql;
-import com.wix.mysql.ScriptResolver;
-import com.wix.mysql.config.Charset;
 import edu.portfolio.coffee.model.Category;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,13 +8,9 @@ import org.springframework.test.context.ActiveProfiles;
 import edu.portfolio.coffee.model.Product;
 
 
-import java.util.List;
-import java.util.Optional;
+
 import java.util.UUID;
 
-import static com.wix.mysql.EmbeddedMysql.anEmbeddedMysql;
-import static com.wix.mysql.config.MysqldConfig.aMysqldConfig;
-import static com.wix.mysql.distribution.Version.v8_0_11;
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.*;
 
@@ -33,8 +26,6 @@ import static org.hamcrest.Matchers.*;
 
 class ProductJdbcRepositoryTest {
 
-    // 정적 필드로 EmbeddedMysql 인스턴스를 선언
-    static EmbeddedMysql embeddedMysql;
 
     @Autowired
     ProductRepository repository;  // 테스트에 사용할 ProductRepository를 주입
@@ -51,6 +42,7 @@ class ProductJdbcRepositoryTest {
         var all = repository.findAll();
         assertThat(all.isEmpty(), is(false));
     }
+    // ============ DONE =============================
 
     @Test
     @Order(2)
