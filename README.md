@@ -1,4 +1,10 @@
 # 프로그래머스 1차 
+- UI
+
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/945326e3-4cc9-4b43-9ad3-852a55332271">
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/a1efae00-9b18-4ec8-9e91-f4f8f3d431d2">
+
+
 
 ## 에러
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/c8074ca7-78e0-4a44-9e9b-e307b748db5e">
