@@ -5,6 +5,11 @@
 
 - 데이터베이스 찾을 수 없어서 서버 중단 
     * JDBC, MySQL 등을 의존성 추가하면 발생 -> 디비를 잡아주면 해결 (h2 or mydsql)
+ 
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/349d2250-354e-428a-8e72-697661d9c143">
+
+- 테스트 코드를 한번에 돌리면, 이렇게 통과 되는데, 개별적으로 돌리면 아이디 조회 + 업데이트에서 에러가 나는 이유는 ???? 
+
 
 ## Regex(Regular Expression)정규표현식
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/82b74943-9e3c-4e97-bc00-69b6277a873b">
