@@ -109,4 +109,8 @@ class ProductJdbcRepositoryTest {
     }
 
 
+    /*1. 	트랜잭션 롤백: @Transactional을 사용 => 실패
+      2. 개별 테스트 메서드 상태 격리: @TestInstance(TestInstance.Lifecycle.PER_METHOD) => 실패
+    * 3. 테스트 전후 데이터 초기화: @BeforeEach와 @AfterEach를 사용 => 실패
+    */
 }
