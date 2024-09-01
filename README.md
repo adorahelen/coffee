@@ -8,7 +8,16 @@
  
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/349d2250-354e-428a-8e72-697661d9c143">
 
-- 테스트 코드를 한번에 돌리면, 이렇게 통과 되는데, 개별적으로 돌리면 아이디 조회 + 업데이트에서 에러가 나는 이유는 ???? 
+- 테스트 코드를 한번에 돌리면, 이렇게 통과 되는데, 개별적으로 돌리면 아이디 조회 + 업데이트에서 에러가 나는 이유는 ????
+
+- 테스트 코드에서 객체를 공유하지 않는 경우 (분리된 경우)
+
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/3cddff96-79cc-4ac5-a6e2-1f80b439f169">
+
+- 테스트 코드 내 객체 공유 
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/43a4527f-1615-474c-9e11-c0566d37fb71">
+
+
 
 
 ## Regex(Regular Expression)정규표현식
