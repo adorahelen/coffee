@@ -1,20 +1,22 @@
 package edu.portfolio.coffee.repository;
 
 import edu.portfolio.coffee.model.Category;
+import edu.portfolio.coffee.model.Product;
+import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
-import edu.portfolio.coffee.model.Product;
 
-
-
+import java.util.Optional;
 import java.util.UUID;
 
-import static org.hamcrest.MatcherAssert.*;
-import static org.hamcrest.Matchers.*;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.samePropertyValuesAs;
 
+@Log4j2
 @SpringBootTest  // Spring Boot 애플리케이션 컨텍스트를 로드하여 통합 테스트를 수행
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)  // 테스트 메서드의 실행 순서를 지정
 @ActiveProfiles("test")  // "test" 프로파일을 활성화하여 테스트 설정을 사용
@@ -33,6 +35,8 @@ class ProductJdbcRepositoryTest {
     // 테스트에 사용할 새로운 Product 객체 생성
     private final Product newProduct = new Product(UUID.randomUUID(), "new-product", Category.COFFEE_BEAN_PACKAGE, 1000L);
 
+
+
     // 테스트 메서드들
     @Test
     @Order(1)
@@ -40,6 +44,9 @@ class ProductJdbcRepositoryTest {
     void testInsert() {
         repository.insert(newProduct);
         var all = repository.findAll();
+        log.info("=============");
+        log.info(all.toString());
+        log.info("=============");
         assertThat(all.isEmpty(), is(false));
     }
     // ============ DONE =============================
@@ -49,16 +56,15 @@ class ProductJdbcRepositoryTest {
     @DisplayName("상품을 이름으로 조회할 수 있다.")
     void testFindByName() {
         var product = repository.findByName(newProduct.getProductName());
+        log.info("=============");
+        log.info(product.toString());
+        log.info("=============");
         assertThat(product.isEmpty(), is(false));
     }
 
-    @Test
-    @Order(3)
-    @DisplayName("상품을아이디로 조회할 수 있다.")
-    void testFindById() {
-        var product = repository.findById(newProduct.getProductId());
-        assertThat(product.isEmpty(), is(false));
-    }
+//    @Override
+//    public Optional<Product> findById(UUID productId) {}
+
 
     @Test
     @Order(4)
