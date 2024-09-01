@@ -44,6 +44,5 @@
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/a160814e-bd5a-4e9b-a3b1-9cf841c74e4a">
 
 ## DTO:record?
-![Uploading image.png…]()
 
 
