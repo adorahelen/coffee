@@ -46,7 +46,12 @@
 ## DTO:record?
 
 ## 노드JS(프론트:리액트)
-- This package has installed:
+- This package has installed: 노드js설치하기 
 - •	Node.js v20.17.0 to /usr/local/bin/node : $node -v => v20.17.0
 - •	npm v10.8.2 to /usr/local/bin/npm : $npm -v => 10.8.2
+- VsCode (설치)
+- 리액트 설치(라이브러리)
+    * 리액트 사용할 폴더에서 $ npx create-react-app my-app => 끝($cd my-app, $npm start)
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/e4f3c327-60da-444a-a160-cf212fcd57c9">
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/2722e387-a5c6-4208-8b0a-6c80cfad6f7a">
 
