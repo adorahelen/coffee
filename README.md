@@ -52,7 +52,9 @@
 - VsCode (설치)
 - 리액트 설치(라이브러리)
     * 리액트 사용할 폴더에서 $ npx create-react-app my-app => 끝($cd my-app, $npm start)
-    * 2번째 사진처럼, 빈 폴더에 리액트 파일들이 구현된 것을 볼 수 있다. 
+    * 2번째 사진처럼, 빈 폴더에 리액트 파일들이 구현된 것을 볼 수 있다.
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/e4f3c327-60da-444a-a160-cf212fcd57c9">
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/167c4467-88b3-4e2a-88a3-3b197fceaec3">
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/7e5f4761-0177-4834-9cef-4fde3099031a">
+
 
