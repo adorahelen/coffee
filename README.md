@@ -47,6 +47,6 @@
 
 ## 노드JS(프론트:리액트)
 - This package has installed:
-- •	Node.js v20.17.0 to /usr/local/bin/node
-- •	npm v10.8.2 to /usr/local/bin/npm
+- •	Node.js v20.17.0 to /usr/local/bin/node : $node -v => v20.17.0
+- •	npm v10.8.2 to /usr/local/bin/npm : $npm -v => 10.8.2
 
