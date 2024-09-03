@@ -57,4 +57,7 @@
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/167c4467-88b3-4e2a-88a3-3b197fceaec3">
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/7e5f4761-0177-4834-9cef-4fde3099031a">
 
+- 인텔리제이 내부에서, 터미널을 통해 -> $CD my-app, $npm -start 
+
+<img width="1274" alt="image" src="https://github.com/user-attachments/assets/d472365e-8908-4fe1-91d5-8ab2050db122">
 
