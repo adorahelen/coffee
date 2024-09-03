@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class MvcConfiguration implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/api/&&").allowedOrigins("*");
+        registry.addMapping("/api/**").allowedOrigins("*");
     }// addMapping("/api/&&"): CORS 설정을 /api/&& 경로에 적용
   //  allowedOrigins("*"): 이 경로에 대해 모든 도메인에서의 요청을 허용
 
