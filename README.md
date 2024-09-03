@@ -43,3 +43,6 @@
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/83554af2-6b0f-472c-a0ed-1db9cda589dd">
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/a160814e-bd5a-4e9b-a3b1-9cf841c74e4a">
 
+## DTO:record?
+
+
