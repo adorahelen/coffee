@@ -49,11 +49,11 @@ public class Order {
         return orderStatus;
     }
 
-    public LocalDateTime getCreatedat() {
+    public LocalDateTime getCreatedAt() {
         return createdat;
     }
 
-    public LocalDateTime getUpdatedat() {
+    public LocalDateTime getUpdatedAt() {
         return updatedat;
     }
 
