@@ -15,6 +15,7 @@
 <h1>Grids & Circles</h1>
 <h2>Production Management</h2>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <!--타임리프(Thymeleaf)가 적용된 부분은 th:* 속성이 사용된 부분들-->
   <a th:href="@{/new-product}" class="btn btn-primary me-md-2" type="button">Add Product</a>
 </div>
 <table class="table table-hover table-striped">
@@ -30,6 +31,8 @@
   </tr>
   </thead>
   <tbody>
+  <!--th:each="product: ${products}":-->
+  <!--•	products 리스트를 순회하면서 각각의 product 객체를 바인딩하는 루프-->
   <tr th:each="product: ${products}" th:object="${product}">
     <td th:text="*{productId}"></td>
     <td th:text="*{productName}"></td>
